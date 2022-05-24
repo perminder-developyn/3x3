@@ -14,7 +14,7 @@
 				</tr>
 
 
-<form action="javascript:" v-on:submit="addPerson()">
+<form action="javascript:" v-on:submit="addPerson()" ref="addTo">
 			<div>
 				<input id="firstName" type="text" placeholder="First Name"/>
 			</div>
@@ -52,14 +52,19 @@ export default {
         }
     },
 methods: {
-		deleteEntry(index) {
+	deleteEntry(index) {
 			this.information.splice(index, 1);
-		}
-	},
+		},
     addPerson(){
-       console.log(document.getElementById("firstName"))
-       
+		const details = {
+		firstName : document.getElementById("firstName").value,
+		lastName : document.getElementById("lastName").value,
+		age : document.getElementById("age").value
+		}
+		if(details.firstName && details.lastName && details.age)
+       this.information.push(details); this.$refs.addTo.reset()
     }
+}
 }
 </script>
 <style>
