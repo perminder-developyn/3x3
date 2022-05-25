@@ -17,6 +17,14 @@ Person Table
 <br/>
 Order List
 <orderList />
+<br/>
+<br/>
+Game List
+<gameList />
+<br/>
+<br/>
+8 - Ball - Mystery
+<mystery8Ball />
 </template>
 
 <script>
@@ -25,9 +33,12 @@ import loginForm from './components/loginForm.vue'
 import quizTest from './components/quizTest.vue'
 import personTable from './components/personTable.vue'
 import orderList from './components/orderList.vue'
+import gameList from './components/gameList.vue'
+import mystery8Ball from './components/8ball.vue'
+
 export default {
     name: "App",
-    components: { digitalClock, loginForm, quizTest, personTable, orderList}
+    components: { digitalClock, loginForm, quizTest, personTable, orderList, gameList, mystery8Ball}
 }
 </script>
 

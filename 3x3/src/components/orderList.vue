@@ -7,13 +7,13 @@
 				</tr>
                 <tr v-for="(row, index) in items" :key="index">
 					<td>{{ row["name"] }}</td>
-					<td>{{ row["price"] }}</td>
+					<td>£{{ row["price"] }}</td>
                     <td> {{ row["count"] }}</td>
                     <button @click="add(index)">+</button>
                     <button @click="remove(index)">-</button>
 				</tr>
                 <tfoot>
-                    <tr>Total: {{total}} <button @click="subTotal()">Calculate</button></tr>
+                    <tr v-if="rounded>0">Total:£{{rounded}}</tr>
                     
                 </tfoot>
 </template>
@@ -26,27 +26,28 @@ export default {
         return {
             items:[
                 {
-                    name: "a",
-                    price: 1,
+                    name: "Apples",
+                    price: "1.99",
                     count: 0
                 },
                 {
-                    name: "b",
-                    price: 2,
+                    name: "Butter",
+                    price: "2.50",
                     count: 0
                 },
                 {
-                    name: "c",
-                    price: 3,
+                    name: "Chicken",
+                    price: "3.99",
                     count: 0
                 },
                 {
-                    name: "d",
-                    price: 4,
+                    name: "Dumplings",
+                    price: "4.00",
                     count: 0
                 },
             ],
-            total: 0
+            total: 0,
+            rounded: 0
         }
     },
     methods: {
@@ -64,6 +65,7 @@ export default {
             this.total = 0
             this.items.forEach(val => {
                 this.total += Number(val.price*val.count);
+                this.rounded =  parseFloat(this.total).toFixed(2)
             })
         }
     }
