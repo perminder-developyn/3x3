@@ -9,7 +9,7 @@
 					<td>{{ row["lastName"] }}</td>
 					<td>{{ row["age"] }}</td>
 					<td>
-						<button v-on:click="deleteEntry(index)">x</button>
+						<button v-on:click="deleteEntry()">x</button>
 					</td>
 				</tr>
 

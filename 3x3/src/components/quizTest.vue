@@ -67,6 +67,7 @@ export default {
       let a = Object.values(this.correct).toString();
       let b = Object.values(this.submitted).toString();
       console.log(this.submitted, this.correct)
+      // changing this to this.correct === this.submitted returns false ???
       if (a === b) {
         this.play();
         setTimeout(this.reload, 2500);

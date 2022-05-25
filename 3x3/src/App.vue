@@ -13,16 +13,21 @@ Multiple Choice Quiz
 <br/>
 Person Table
 <personTable />
+<br/>
+<br/>
+Order List
+<orderList />
 </template>
 
 <script>
 import digitalClock from './components/digitalClock.vue'
 import loginForm from './components/loginForm.vue'
 import quizTest from './components/quizTest.vue'
-import PersonTable from './components/personTable.vue'
+import personTable from './components/personTable.vue'
+import orderList from './components/orderList.vue'
 export default {
     name: "App",
-    components: { digitalClock, loginForm, quizTest, PersonTable }
+    components: { digitalClock, loginForm, quizTest, personTable, orderList}
 }
 </script>
 
