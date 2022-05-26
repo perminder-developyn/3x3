@@ -1,6 +1,8 @@
 <template>
-				<tr>
-					<th>First Name</th>
+<div class="grid-component">
+	<div class="form-container">
+	<tr>
+		<th>First Name</th>
 					<th>Last Name</th>
 					<th>Age</th>
 				</tr>
@@ -12,8 +14,8 @@
 						<button v-on:click="deleteEntry()">x</button>
 					</td>
 				</tr>
-
-
+				</div>
+<div class="person-form">
 <form action="javascript:" v-on:submit="addPerson()" ref="addTo">
 			<div>
 				<input id="firstName" type="text" placeholder="First Name"/>
@@ -26,6 +28,8 @@
 			</div>
 			<input type="submit" value="Add person to table" />
 		</form>
+		</div>
+		</div>
 </template>
 
 <script>
@@ -68,4 +72,10 @@ methods: {
 }
 </script>
 <style>
+.form-container{
+	display: inline;
+}
+.person-form{
+	padding-top: 3rem;
+}
 </style>

@@ -1,6 +1,6 @@
 ```
 <template>
-  <div>
+  <div class="grid-component">
     <form v-on:submit="validate()">
       <div v-for="(question, index) in quiz" :key="question">
         {{ question.question }}<br />

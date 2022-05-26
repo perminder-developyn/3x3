@@ -1,5 +1,5 @@
 <template>
-<div class="clock-wrapper">
+<div class="grid-component">
 <div class="time">
 {{time}}
 </div>
@@ -23,3 +23,10 @@ export default {
 }
 
 </script>
+
+<style>
+.time{
+    transform: scale(5);
+    color: rgb(0, 171, 171);
+}
+</style>

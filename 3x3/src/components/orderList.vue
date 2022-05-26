@@ -1,4 +1,6 @@
 <template>
+<div class="grid-component">
+    <div class="items-list">
 <tr>
 					<th>Item</th>
 					<th>Price</th>
@@ -12,10 +14,11 @@
                     <button @click="add(index)">+</button>
                     <button @click="remove(index)">-</button>
 				</tr>
-                <tfoot>
+                <tfoot class="total">
                     <tr v-if="rounded>0">Total:£{{rounded}}</tr>
-                    
                 </tfoot>
+                </div>
+                </div>
 </template>
 
 
@@ -71,10 +74,20 @@ export default {
     }
 }
 </script>
-
-
-
-
-
 <style>
+th{
+    padding: .5rem;
+    border-bottom: 3px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+td{
+    padding-top: .5rem;
+    border: 1px solid rgba(128, 128, 128, 0.133);
+}
+.total{
+   background-color: rgba(0, 255, 255, 0.153);
+   transform: translateY(1rem) translateX(15rem);
+}
 </style>

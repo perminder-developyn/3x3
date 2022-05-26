@@ -1,4 +1,5 @@
 <template>
+<div class="grid-component">
 			<form action="javascript:" v-on:submit="login()">
             <p>username and password :  'p'</p>
 				<input type="text"  id="username"  v-model="username" placeholder="p"/>
@@ -7,7 +8,7 @@
 			</form>
 			<div class="login" v-if="correct">log in successful</div>
             <div class="fail" v-if="fail">try again</div>
-	
+	</div>
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template>
-<button  v-on:click="toggle()">grid/list</button>
+<div class="grid-component">
+<button class="toggle" v-on:click="toggle()">grid/list</button>
     <input type="text" v-model="search" placeholder="Search title.." v-on:keyup="filteredList()"/>
         <label></label>
 <div id="list-container"> 
@@ -9,6 +10,7 @@
    <img v-bind:src="item.image">
    </div>
 </li>
+</div>
 </div>
 
 </template>
@@ -76,12 +78,13 @@ img{
 }
 
 #item-list{
- flex: 1 1 30%; 
-    height: 250px;
+ flex: 1 1 30%;
+ padding-top: 4rem;
 }
 
 #item-grid{
    display: inline;
+   padding-top: 4rem;
 }
 
   
