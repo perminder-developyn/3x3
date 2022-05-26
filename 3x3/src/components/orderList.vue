@@ -75,18 +75,18 @@ export default {
 }
 </script>
 <style>
-th{
+th {
     padding: .5rem;
     border-bottom: 3px solid black;
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-td{
+td {
     padding-top: .5rem;
     border: 1px solid rgba(128, 128, 128, 0.133);
 }
-.total{
+.total {
    background-color: rgba(0, 255, 255, 0.153);
    transform: translateY(1rem) translateX(15rem);
 }

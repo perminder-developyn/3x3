@@ -1,13 +1,14 @@
 <template>
-<div class="grid-component">
-			<form action="javascript:" v-on:submit="login()">
+	<div class="grid-component">
+		<form action="javascript:" v-on:submit="login()">
             <p>username and password :  'p'</p>
 				<input type="text"  id="username"  v-model="username" placeholder="p"/>
 				<input type="password"  id="password" v-model="password" placeholder="p"/>
 				<input type="submit"/>
-			</form>
-			<div class="login" v-if="correct">log in successful</div>
-            <div class="fail" v-if="fail">try again</div>
+			
+		</form>
+	<div class="login" v-if="correct">log in successful</div>
+        <div class="fail" v-if="fail">try again</div>
 	</div>
 </template>
 
@@ -39,7 +40,7 @@ export default {
 </script>
 
 <style>
-.login{
+.login {
 	color: white;
 	background-color: green;
 }

@@ -1,35 +1,34 @@
 <template>
-<div class="grid-component">
-	<div class="form-container">
-	<tr>
-		<th>First Name</th>
-					<th>Last Name</th>
-					<th>Age</th>
+	<div class="grid-component">
+		<div class="form-container">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+			</tr>
+            <tr v-for="(row, index) in information" :key="index">
+				<td>{{ row["firstName"] }}</td>
+				<td>{{ row["lastName"] }}</td>
+				<td>{{ row["age"] }}</td>
+				<td>
+					<button v-on:click="deleteEntry()">x</button>					</td>
 				</tr>
-                <tr v-for="(row, index) in information" :key="index">
-					<td>{{ row["firstName"] }}</td>
-					<td>{{ row["lastName"] }}</td>
-					<td>{{ row["age"] }}</td>
-					<td>
-						<button v-on:click="deleteEntry()">x</button>
-					</td>
-				</tr>
+		</div>
+		<div class="person-form">
+			<form action="javascript:" v-on:submit="addPerson()" ref="addTo">
+				<div>
+					<input id="firstName" type="text" placeholder="First Name"/>
 				</div>
-<div class="person-form">
-<form action="javascript:" v-on:submit="addPerson()" ref="addTo">
-			<div>
-				<input id="firstName" type="text" placeholder="First Name"/>
-			</div>
-			<div>
-				<input id="lastName" type="text" placeholder="Last Name"/>
-			</div>
-			<div>
-				<input id="age" type="number" placeholder="Age"/>
-			</div>
-			<input type="submit" value="Add person to table" />
-		</form>
-		</div>
-		</div>
+				<div>
+					<input id="lastName" type="text" placeholder="Last Name"/>
+				</div>
+				<div>
+					<input id="age" type="number" placeholder="Age"/>
+				</div>
+				<input type="submit" value="Add person to table" />
+			</form>
+	</div>
+	</div>
 </template>
 
 <script>

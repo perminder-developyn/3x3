@@ -1,30 +1,28 @@
-```
 <template>
   <div class="grid-component">
-    <form v-on:submit="validate()">
-      <div v-for="(question, index) in quiz" :key="question">
-        {{ question.question }}<br />
-        <div v-for="(answer, i) in question.answers" :key="answer[i]">
-        <input
-          type="radio"
-          :name="index"
-          :value="answer"
-          :key="i"
-          v-model="submitted[index]"
-        />
-        <label>{{answer}}</label>
-        </div>
+      <form v-on:submit="validate()">
+          <div v-for="(question, index) in quiz" :key="question">
+              {{ question.question }}<br />
+              <div v-for="(answer, i) in question.answers" :key="answer[i]">
+                  <input
+                    type="radio"
+                    :name="index"
+                    :value="answer"
+                    :key="i"
+                    v-model="submitted[index]"/>
+                     <label>{{answer}}</label>
+              </div>
 
-      </div>
-    </form>
-    <button @click="check">Check</button>
-    <audio
-      id="audio"
-      src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
-    ></audio>
-    <div class="fail" v-if="reloader">
-      <button @click="reload">Try Again</button>
-    </div>
+          </div>
+          </form>
+              <button @click="check">Check</button>
+                    <audio
+                        id="audio"
+                        src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+                    </audio>
+              <div class="fail" v-if="reloader">
+                <button @click="reload">Try Again</button>
+              </div>
   </div>
 </template>
 

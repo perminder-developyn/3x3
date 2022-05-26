@@ -1,15 +1,13 @@
 <template>
-<div class="grid-component">
-<div class="time">
-{{time}}
-</div>
-</div>
+    <div class="grid-component">
+        <div class="time">
+            {{time}}
+        </div>
+    </div>
 </template>
 
 <script>
-
 export default {
-    
 	data (){
 		return {
 			time: ''
@@ -21,12 +19,11 @@ export default {
         },1000)
     }
 }
-
 </script>
 
 <style>
-.time{
-    transform: scale(5);
-    color: rgb(0, 171, 171);
-}
+    .time {
+        transform: scale(5);
+        color: rgb(0, 171, 171);
+    }
 </style>
