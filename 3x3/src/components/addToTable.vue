@@ -1,6 +1,6 @@
 <template>
 		<div class="person-form">
-			<form action="javascript:" v-on:submit="$emit('person_data', addPerson())" ref="addTo">
+			<form action="javascript:" v-on:submit="addPerson()" ref="addTo">
 				<div>
 					<input id="firstName" type="text" placeholder="First Name"/>
 				</div>
@@ -28,7 +28,8 @@ methods: {
 		age : document.getElementById("age").value
 		}
 		if(details.firstName && details.lastName && details.age)
-       this.information.push(details); this.$refs.addTo.reset()
+       this.$emit("add", details)
+       console.log(details)
     }
 }
 }
