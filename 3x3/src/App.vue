@@ -2,8 +2,13 @@
   <digitalClock />
   <loginForm />
   <quizTest />
+<<<<<<< HEAD
   <personTable />
   <addToTable />
+=======
+  <personTable :information="information"/>
+  <addPerson @add="addPersonTable"/>
+>>>>>>> bb852ba8c6d29a6b82a44de67c8cf12bc4ad7b81
   <orderList />
   <gameList />
   <mystery8Ball />
@@ -14,14 +19,49 @@
   import loginForm from './components/loginForm.vue'
   import quizTest from './components/quizTest.vue'
   import personTable from './components/personTable.vue'
+<<<<<<< HEAD
   import addToTable from './components/addToTable.vue'
+=======
+  import addPerson from './components/addPerson.vue'
+>>>>>>> bb852ba8c6d29a6b82a44de67c8cf12bc4ad7b81
   import orderList from './components/orderList.vue'
   import gameList from './components/gameList.vue'
   import mystery8Ball from './components/eightBall.vue'
 
   export default {
     name: "App",
+<<<<<<< HEAD
     components: { digitalClock, loginForm, quizTest, personTable, addToTable, orderList, gameList, mystery8Ball}
+=======
+    components: { digitalClock, loginForm, quizTest, personTable, addPerson, orderList, gameList, mystery8Ball},
+    methods: {
+      addPersonTable(event) {
+        this.information.push(event)
+        console.log(this.information)
+      }
+    },
+     data(){
+        return{
+            information:[
+                {
+            firstName:'chik',
+            lastName: 'sdasd',
+            age: 22,
+            },
+            {
+            firstName:'chike',
+            lastName: 'sdasdsdsd',
+            age: 55,
+            }
+            ],
+            person: {firstName:'',
+                     lastName:'',
+                     age: null
+                     }
+            
+        }
+    },
+>>>>>>> bb852ba8c6d29a6b82a44de67c8cf12bc4ad7b81
     }
 </script>
 
