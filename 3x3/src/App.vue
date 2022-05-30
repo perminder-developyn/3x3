@@ -2,7 +2,8 @@
   <digitalClock />
   <loginForm />
   <quizTest />
-  <personTable />
+  <personTable :information="information"/>
+  <addPerson @add="addPersonTable"/>
   <orderList />
   <gameList />
   <mystery8Ball />
@@ -13,13 +14,41 @@
   import loginForm from './components/loginForm.vue'
   import quizTest from './components/quizTest.vue'
   import personTable from './components/personTable.vue'
+  import addPerson from './components/addPerson.vue'
   import orderList from './components/orderList.vue'
   import gameList from './components/gameList.vue'
   import mystery8Ball from './components/eightBall.vue'
 
   export default {
     name: "App",
-    components: { digitalClock, loginForm, quizTest, personTable, orderList, gameList, mystery8Ball}
+    components: { digitalClock, loginForm, quizTest, personTable, addPerson, orderList, gameList, mystery8Ball},
+    methods: {
+      addPersonTable(event) {
+        this.information.push(event)
+        console.log(this.information)
+      }
+    },
+     data(){
+        return{
+            information:[
+                {
+            firstName:'chik',
+            lastName: 'sdasd',
+            age: 22,
+            },
+            {
+            firstName:'chike',
+            lastName: 'sdasdsdsd',
+            age: 55,
+            }
+            ],
+            person: {firstName:'',
+                     lastName:'',
+                     age: null
+                     }
+            
+        }
+    },
     }
 </script>
 
