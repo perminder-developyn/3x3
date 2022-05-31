@@ -40,12 +40,15 @@ let items = [
             ]
 
 function filteredList() {
-  return items.forEach(item => {
+  return items.filter(item => {
     if(item.title.includes(search)){
        item.display = true;
        console.log(search, items)
+       items = items;
     }else{
        item.display = false;
+       console.log(false)
+       items = items
       }
     })  
 };
