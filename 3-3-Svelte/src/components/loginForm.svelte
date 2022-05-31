@@ -14,9 +14,9 @@
 
 
 <script>
-let username= "";
-let password= "";
-let correct= false;
+let username = "";
+let password = "";
+let correct = false;
 let fail = false;
 
 function login() {

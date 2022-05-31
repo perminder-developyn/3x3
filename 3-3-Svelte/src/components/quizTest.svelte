@@ -12,8 +12,8 @@
     {/each}
     
     <button on:click={check}>Check</button>
-    <audio  id="audio"
-    src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+    <audio  id="audio" 
+    src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" >
     </audio>
     {#if reloader}
       <div class="fail">
