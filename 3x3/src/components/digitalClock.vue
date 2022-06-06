@@ -14,9 +14,9 @@ export default {
 		}
 	},
     created() {
-        setInterval(()=>{
+        setInterval( () => {
             this.time = new Date().toLocaleTimeString();
-        },1000)
+        },100)
     }
 }
 </script>
