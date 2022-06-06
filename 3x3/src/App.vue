@@ -3,7 +3,7 @@
   <LoginForm />
   <QuizTest />
   <PersonTable :information="information"/>
-  <AddPerson @add="addPersonTable"/>
+  <AddPerson @add="addPersonTable" @delete="deleteEntry(index)"/>
   <OrderList />
   <GameList />
   <Mystery8Ball />
@@ -34,6 +34,9 @@
         methods: {
             addPersonTable(event) {
                 this.information.push(event)
+            },
+            deleteEntry(event){
+                console.log(event)
             }
         },
      data(){
