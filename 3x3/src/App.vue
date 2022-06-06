@@ -38,17 +38,12 @@
     },
      data(){
         return{
-            information:[
+            information: [
                 {
-                firstName:'chik',
-                lastName: 'sdasd',
-                age: 22,
+                firstName:'Perminder',
+                lastName: 'Dhillon',
+                age: 31,
                 },
-                {
-                firstName:'chike',
-                lastName: 'sdasdsdsd',
-                age: 55,
-                }
             ],
             person: {
                 firstName:'',
@@ -88,16 +83,16 @@
             transform: scale(80%);
             transform: translateY(1rem);
         }
-        #app{
+        #app {
             display: inline;
         }
-        .grid-component{
+        .grid-component {
             padding: 5rem;
         }
-        .time{
+        .time {
             transform: scale(3);
         }
-        .items-list{
+        .items-list {
             display: inline;
         }
 }
