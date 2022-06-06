@@ -19,7 +19,7 @@ export default {
 			password: '',
 			correct: false,
             fail: false,
-			userData: { password: 'p', username: 'p'}
+			userData: { password: 'p', username: 'p' }
 		}
 	},
 	methods: {
