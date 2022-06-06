@@ -8,12 +8,12 @@
 
 <script>
 export default {
-	data (){
+	data () {
 		return {
 			time: ''
 		}
 	},
-    created(){
+    created() {
         setInterval(()=>{
             this.time = new Date().toLocaleTimeString();
         },1000)
@@ -24,6 +24,7 @@ export default {
 <style>
     .time {
         transform: scale(5);
+        max-width: 400px;
         color: rgb(0, 171, 171);
     }
 </style>

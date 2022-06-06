@@ -1,13 +1,10 @@
 <template>
 	<div class="grid-component">
-		<form action="javascript:" v-on:submit="login()">
-            <p>username and password :  'p'</p>
-				<input type="text"  id="username"  v-model="username" placeholder="p"/>
-				<input type="password"  id="password" v-model="password" placeholder="p"/>
-				<input type="submit"/>
-			
-		</form>
-	<div class="login" v-if="correct">log in successful</div>
+        <p>username and password are both 'p'</p>
+		<input type="text"  id="username"  v-model="username" placeholder="Enter Username"/>
+		<input type="password"  id="password" v-model="password" placeholder="Enter Password"/>
+		<button @click="login">Login</button>
+		<div class="login" v-if="correct">log in successful</div>
         <div class="fail" v-if="fail">try again</div>
 	</div>
 </template>
@@ -18,30 +15,38 @@ export default {
     
 	data() {
 		return {
-			username: "",
-			password: "",
+			username: '',
+			password: '',
 			correct: false,
-            fail: false
+            fail: false,
+			userData: { password: 'p', username: 'p'}
 		}
 	},
 	methods: {
 		login() {
             this.fail = false;
             this.correct = false;
-			if ((this.username && this.password === "p")) {
-				this.correct = true;
-			}else{
+			if ((this.password === this.userData.password & 
+				this.username === this.userData.username)) {
+					this.correct = true;
+					this.reset();
+			} else {
                 this.fail = true;
+				this.reset();
             }
+		},
+		reset() {
+			this.username = '';
+			this.password = '';
 		}
 	}
 }
 
 </script>
 
-<style>
-.login {
-	color: white;
-	background-color: green;
-}
+<style>	
+	.login {
+		color: white;
+		background-color: green;
+	}
 </style>
