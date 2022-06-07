@@ -11,15 +11,16 @@
 				<td>{{ row["lastName"] }}</td>
 				<td>{{ row["age"] }}</td>
 				<td>
-					<button v-on:click="deleteEntry()">x</button>					</td>
-				</tr>
+					<button v-on:click="deleteEntry(index)">x</button>
+				</td>
+			</tr>
 		</div>
 	</div>
 </template>
 
 <script>
-
 export default {
+<<<<<<< HEAD
 methods: {
 	deleteEntry(index) {
 			this.information.splice(index, 1);
@@ -31,13 +32,27 @@ props: {
       required: true
     },
 }
+=======
+	// delete function isn't working since using props
+	methods: {
+		deleteEntry(index) {
+			this.$emit('delete', index)
+		}
+	},
+	props: {
+        information: {
+            type: Array,
+            required: true
+        },
+	}
+>>>>>>> c4cc5e06b412d70f75ee5effffb0151c56da6a23
 }
 </script>
 <style>
-.form-container{
+.form-container {
 	display: inline;
 }
-.person-form{
+.person-form {
 	padding-top: 3rem;
 }
 </style>
