@@ -2,19 +2,20 @@
 	<div class="grid-component">
         <div v-for="(question, index) in quiz" :key="question">
             {{ question.question }}
-                <div v-for="(answer, i) in question.answers" :key="answer[i]">
-                    <input
-                        type="radio"
-                        :name="index"
-                        :value="answer"
-                        :key="i"
-                        v-model="submitted[index]"/>
-                     <label> {{ answer }} </label>
-                </div>
+            <div v-for="(answer, i) in question.answers" :key="answer[i]">
+                <input
+					type="radio"
+					:name="index"
+					:value="answer"
+					:key="i"
+					v-model="submitted[index]"
+				/>
+				<label>{{ answer }}</label>
+			</div>
         </div>
-          <button @click="check"> Check Answers </button>
-          <div class="fail" v-if="reloader">
-                <button @click="reload"> Try Again </button>
+        <button @click="check">Check Answers</button>
+        <div class="fail" v-if="reloader">
+            <button @click="reload">Try Again</button>
         </div>
 		<audio
 			ref="audio"
@@ -34,32 +35,35 @@ export default {
 			correct: ['a', 'c', 'w','z'],
 			quiz: [
 				{
-				question: 'What is the first letter of the alphabet?',
-				answers: ['a', 'b'],
+					question: 'What is the first letter of the alphabet?',
+					answers: ['a', 'b'],
 				},
 				{
-				question: 'What is the third letter of the alphabet?',
-				answers: ['c', 'd'],
+					question: 'What is the third letter of the alphabet?',
+					answers: ['c', 'd'],
 				},
 				{
-				question: 'What is the fourth to last letter of the alphabet?',
-				answers: ['w', 'x'],
+					question: 'What is the fourth to last letter of the alphabet?',
+					answers: ['w', 'x'],
 				},
 				{
-				question: 'What is the last letter of the alphabet?',
-				answers: ['y', 'z'],
+					question: 'What is the last letter of the alphabet?',
+					answers: ['y', 'z'],
 				},
 			],
 		};
-},
+	},
 	methods: {
 		play() {
 			this.$refs.audio.play();
 		},
 		check() {
-			let a = this.correct.toString();
-			let b = this.submitted.toString();
-			if(a === b) {
+			let a = this.correct
+			let b = this.submitted
+			// loop over array a
+			// check every element at each index in array a check value of a[index]
+			// to the element at the same index in array b
+			if (a.every((element, index) => element === b[index])) {
 				this.play();
 				setTimeout(this.reload, 2500);
 			} else {

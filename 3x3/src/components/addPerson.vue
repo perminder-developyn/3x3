@@ -24,8 +24,8 @@ export default {
 				lastName: this.lastName, 
 				age: this.age 
 			}
-		if(details.firstName && details.lastName && details.age)
-			this.$emit("add", details)
+			if(details.firstName && details.lastName && details.age)
+				this.$emit("add", details)
     }
 }
 }

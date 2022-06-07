@@ -1,19 +1,20 @@
 <template>
     <div class="grid-component">
         <button 
-            class= "ball" 
-            v-on:click= "suspense"
-            > {{reply}}
+            class="ball" 
+            v-on:click="suspense"
+        >   
+            {{reply}}
         </button>
     </div>
 </template>
 
 <script>
-export default{
+export default {
     data() {
         return {
-            question:'',
-            reply:'8',
+            question: '',
+            reply: '8',
             replies: [
                 'As I see it, yes',
                 'Ask again later',
@@ -36,21 +37,21 @@ export default{
                 'Yes, definitely',
                 'You may rely on it',         
             ]
-        }
+        };
     },
-    methods:{
+    methods: {
         randomReply() {
-            this.reply = this.replies[Math.floor(Math.random()*this.replies.length)]
+            this.reply = this.replies[Math.floor(Math.random()*this.replies.length)];
         },
         suspense() {
-            this.reply = ""
-            setInterval(this.loader, 500)
-            setTimeout(this.randomReply, 3000)
-            setTimeout(this.reload, 9000)
+            this.reply = "";
+            setInterval(this.loader, 500);
+            setTimeout(this.randomReply, 3000);
+            setTimeout(this.reload, 9000);
         },
         loader() {
-            if(this.reply.length < 3)
-            this.reply += "."
+            if (this.reply.length < 3)
+                this.reply += ".";
         },
         reload() {
             window.location.reload();

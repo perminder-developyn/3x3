@@ -2,20 +2,20 @@
     <div class="grid-component">
         <div class="items-list">
             <tr>
-				<th> Item </th>
-				<th> Price </th>
-				<th> Item quantity </th>
-                <th> Add/Remove </th>
+				<th>Item</th>
+				<th>Price</th>
+				<th>Item quantity</th>
+                <th>Add/Remove</th>
 			</tr>
             <tr v-for="(row, index) in items" :key="index">
 				<td> {{ row["name"] }} </td>
 				<td>£{{ row["price"] }} </td>
                 <td> {{ row["count"] }} </td>
-                <button @click="add(index)"> + </button>
-                <button @click="remove(index)"> - </button>
+                <button @click="add(index)">+</button>
+                <button @click="remove(index)">-</button>
 			</tr>
             <tfoot class="total">
-                <tr v-if="rounded>0"> Total:£{{rounded}} </tr>
+                <tr v-if="rounded > 0"> Total:£{{rounded}} </tr>
             </tfoot>
         </div>
     </div>
@@ -25,11 +25,11 @@
 
 <script>
 export default {
-    data(){
+    data() {
         return {
             total: 0,
             rounded: 0,
-            items:[
+            items: [
                 {
                     name: 'Apples',
                     price: '1.99',
@@ -51,24 +51,24 @@ export default {
                     count: 0
                 },
             ]
-        }
+        };
     },
     methods: {
-        add(row){
+        add(row) {
             setTimeout(this.subTotal, 1)
-            return (this.items)[row].count++;
+            return this.items[row].count++;
         },
-        remove(row){
+        remove(row) {
             setTimeout(this.subTotal, 1)
-            if((this.items)[row].count>0)
-            return (this.items)[row].count--;
+            if (this.items[row].count > 0)
+                return this.items[row].count--;
         },
-        subTotal(){
+        subTotal() {
             this.total = 0
             this.items.forEach(val => {
-                this.total += Number(val.price*val.count);
+                this.total += Number(val.price * val.count);
                 this.rounded =  parseFloat(this.total).toFixed(2);
-            })
+            });
         }
     }
 }

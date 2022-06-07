@@ -2,7 +2,7 @@
   <DigitalClock />
   <LoginForm />
   <QuizTest />
-  <PersonTable :information="information" @delete="deleteEntry"/>
+  <PersonTable :information="information" @delete="deleteEntry" />
   <AddPerson @add="addPersonTable" />
   <OrderList />
   <GameList />

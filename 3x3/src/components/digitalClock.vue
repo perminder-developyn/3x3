@@ -13,10 +13,10 @@ export default {
 			time: ''
 		}
 	},
-    created() {
-        setInterval( () => {
+    mounted() {
+        setInterval(() => {
             this.time = new Date().toLocaleTimeString();
-        },100)
+        }, 1000);
     }
 }
 </script>
