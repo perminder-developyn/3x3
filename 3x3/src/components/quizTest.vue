@@ -26,50 +26,50 @@
 
 <script>
 export default {
-  data() {
-    return {
-      reloader: false,
-      answer: '',
-      submitted: [],
-      correct: ['a', 'c', 'w','z'],
-      quiz: [
-        {
-          question: 'What is the first letter of the alphabet?',
-          answers: ['a', 'b'],
-        },
-        {
-          question: 'What is the third letter of the alphabet?',
-          answers: ['c', 'd'],
-        },
-        {
-          question: 'What is the fourth to last letter of the alphabet?',
-          answers: ['w', 'x'],
-        },
-        {
-          question: 'What is the last letter of the alphabet?',
-          answers: ['y', 'z'],
-        },
-      ],
-    };
-  },
-  methods: {
-    play() {
-      const audio = document.getElementById('audio');
-      audio.play();
-    },
-    check() {
-      let a = this.correct.toString();
-      let b = this.submitted.toString();
-      if(a === b) {
-        this.play();
-        setTimeout(this.reload, 2500);
-      }else{
-          this.reloader = true;
-      }
-    },
-    reload() {
-      window.location.reload();
-    },
-  },
+    data() {
+		return {
+			reloader: false,
+			answer: '',
+			submitted: [],
+			correct: ['a', 'c', 'w','z'],
+			quiz: [
+				{
+				question: 'What is the first letter of the alphabet?',
+				answers: ['a', 'b'],
+				},
+				{
+				question: 'What is the third letter of the alphabet?',
+				answers: ['c', 'd'],
+				},
+				{
+				question: 'What is the fourth to last letter of the alphabet?',
+				answers: ['w', 'x'],
+				},
+				{
+				question: 'What is the last letter of the alphabet?',
+				answers: ['y', 'z'],
+				},
+			],
+		};
+},
+	methods: {
+		play() {
+			const audio = document.getElementById('audio');
+			audio.play();
+		},
+		check() {
+			let a = this.correct.toString();
+			let b = this.submitted.toString();
+			if(a === b) {
+				this.play();
+				setTimeout(this.reload, 2500);
+			} else {
+				this.reloader = true;
+			}
+		},
+		reload() {
+			window.location.reload();
+		},
+	},
 };
 </script>

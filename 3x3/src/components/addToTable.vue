@@ -1,41 +1,32 @@
 <template>
-		<div class="person-form">
-			<form action="javascript:" v-on:submit="addPerson()" ref="addTo">
-				<div>
-					<input id="firstName" type="text" placeholder="First Name"/>
-				</div>
-				<div>
-					<input id="lastName" type="text" placeholder="Last Name"/>
-				</div>
-				<div>
-					<input id="age" type="number" placeholder="Age"/>
-				</div>
-				<input type="submit" value="Add person to table"/>
-			</form>
-	    </div>
+	<div class="person-form">
+		<input id="firstName" type="text" placeholder="First Name" v-model="firstName"/>
+		<input id="lastName" type="text" placeholder="Last Name" v-model="lastName"/>
+		<input id="age" type="number" placeholder="Age" v-model="age"/>				
+		<button @click="addPerson">Add Person To Table</button>
+	</div>
 </template>
 
 <script>
-export default {
-    data(){
+
+export default {	
+	data() {
+        return {
+            firstName: '',
+			lastName: '',
+			age: null         
+        }
     },
-methods: {
-	
-    addPerson(){
-		const details = {
-		firstName : document.getElementById("firstName").value,
-		lastName : document.getElementById("lastName").value,
-		age : document.getElementById("age").value
-		}
+	methods: {
+		addPerson(){
+			const details = {
+				firstName: this.firstName, 
+				lastName: this.lastName, 
+				age: this.age 
+			}
 		if(details.firstName && details.lastName && details.age)
-       this.$emit("add", details)
-       console.log(details)
-    }
-}
+			this.$emit("add", details)
+    	}
+	}
 }
 </script>
-
-
-<style>
-
-</style>

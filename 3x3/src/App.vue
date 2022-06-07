@@ -2,24 +2,24 @@
   <DigitalClock />
   <LoginForm />
   <QuizTest />
-  <PersonTable :information="information"/>
-  <AddPerson @add="addPersonTable" @delete="deleteEntry(index)"/>
+  <PersonTable :information="information" @delete="deleteEntry"/>
+  <AddPerson @add="addPersonTable" />
   <OrderList />
   <GameList />
   <Mystery8Ball />
 </template>
 
 <script>
-  import DigitalClock from './components/digitalClock.vue'
-  import LoginForm from './components/loginForm.vue'
-  import QuizTest from './components/quizTest.vue'
-  import PersonTable from './components/personTable.vue'
-  import AddPerson from './components/addPerson.vue'
-  import OrderList from './components/orderList.vue'
-  import GameList from './components/gameList.vue'
-  import Mystery8Ball from './components/eightBall.vue'
+import DigitalClock from './components/digitalClock.vue'
+import LoginForm from './components/loginForm.vue'
+import QuizTest from './components/quizTest.vue'
+import PersonTable from './components/personTable.vue'
+import AddPerson from './components/addPerson.vue'
+import OrderList from './components/orderList.vue'
+import GameList from './components/gameList.vue'
+import Mystery8Ball from './components/eightBall.vue'
 
-  export default {
+export default {
         name: "App",
         components: { 
             DigitalClock,
@@ -35,12 +35,9 @@
             addPersonTable(event) {
                 this.information.push(event)
             },
-<<<<<<< HEAD
-=======
             deleteEntry(event){
-                console.log(event)
-            }
->>>>>>> c4cc5e06b412d70f75ee5effffb0151c56da6a23
+                this.information.splice(event, 1);
+            },
         },
      data(){
         return{
