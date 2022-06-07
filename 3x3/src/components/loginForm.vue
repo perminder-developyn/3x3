@@ -2,9 +2,9 @@
 	<div class="grid-component">
 		<input type="text"  id="username"  v-model="username" placeholder="Enter Username"/>
 		<input type="password"  id="password" v-model="password" placeholder="Enter Password"/>
-		<button @click="login">Login</button>
-		<div class="login" v-if="correct">Log in successful</div>
-        <div class="fail" v-else>Enter your username and password (they're both p)</div>
+		<button @click="login"> Login </button>
+		<div class="login" v-if="correct"> Log in successful </div>
+        <div class="fail" v-else> Enter your username and password (they're both p) </div>
 	</div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="person-form">
+	<div class="grid-component">
 		<input id="firstName" type="text" placeholder="First Name" v-model="firstName"/>
 		<input id="lastName" type="text" placeholder="Last Name" v-model="lastName"/>
 		<input id="age" type="number" placeholder="Age" v-model="age"/>				

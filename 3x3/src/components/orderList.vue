@@ -15,7 +15,7 @@
                 <button @click="remove(index)"> - </button>
 			</tr>
             <tfoot class="total">
-                <tr v-if="rounded>0">Total:£{{rounded}}</tr>
+                <tr v-if="rounded>0"> Total:£{{rounded}} </tr>
             </tfoot>
         </div>
     </div>
@@ -56,23 +56,24 @@ export default {
     methods: {
         add(row){
             setTimeout(this.subTotal, 1)
-            return (this.items)[row].count++
+            return (this.items)[row].count++;
         },
         remove(row){
             setTimeout(this.subTotal, 1)
             if((this.items)[row].count>0)
-            return (this.items)[row].count--
+            return (this.items)[row].count--;
         },
         subTotal(){
             this.total = 0
             this.items.forEach(val => {
                 this.total += Number(val.price*val.count);
-                this.rounded =  parseFloat(this.total).toFixed(2)
+                this.rounded =  parseFloat(this.total).toFixed(2);
             })
         }
     }
 }
 </script>
+
 <style>
 th {
     padding: .5rem;

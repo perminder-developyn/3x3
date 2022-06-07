@@ -9,16 +9,15 @@
                         :value="answer"
                         :key="i"
                         v-model="submitted[index]"/>
-                     <label>{{ answer }}</label>
+                     <label> {{ answer }} </label>
                 </div>
         </div>
-          <button @click="check">Check Answers</button>
+          <button @click="check"> Check Answers </button>
           <div class="fail" v-if="reloader">
-                <button @click="reload">Try Again</button>
+                <button @click="reload"> Try Again </button>
         </div>
 		<audio
 			ref="audio"
-            id="audio"
             src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
         </audio>
     </div>
@@ -55,7 +54,7 @@ export default {
 },
 	methods: {
 		play() {
-			this.$refs.audio.play()
+			this.$refs.audio.play();
 		},
 		check() {
 			let a = this.correct.toString();

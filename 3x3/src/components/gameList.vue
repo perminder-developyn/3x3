@@ -118,7 +118,7 @@ li h3 {
     max-width: 150px;
 }
 
-.content{
+.content {
     padding: 1rem;
 
 }

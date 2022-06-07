@@ -1,9 +1,9 @@
 <template>
     <div class="grid-component">
         <button 
-            class="ball" 
-            v-on:click="suspense"
-            >{{reply}}
+            class= "ball" 
+            v-on:click= "suspense"
+            > {{reply}}
         </button>
     </div>
 </template>

@@ -35,7 +35,7 @@ export default {
             addPersonTable(event) {
                 this.information.push(event)
             },
-            deleteEntry(event){
+            deleteEntry(event) {
                 this.information.splice(event, 1);
             },
         },
