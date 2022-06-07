@@ -22,9 +22,9 @@ export default {
 </script>
 
 <style>
-    .time {
-        transform: scale(5);
-        max-width: 400px;
-        color: rgb(0, 171, 171);
-    }
+.time {
+    transform: scale(5);
+    max-width: 400px;
+    color: rgb(0, 171, 171);
+}
 </style>

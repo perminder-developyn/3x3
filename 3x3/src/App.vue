@@ -34,7 +34,7 @@
         methods: {
             addPersonTable(event) {
                 this.information.push(event)
-            }
+            },
         },
      data(){
         return{

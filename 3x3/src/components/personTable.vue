@@ -20,11 +20,11 @@
 <script>
 
 export default {
-// methods: {
-// 	deleteEntry(index) {
-// 			this.information.splice(index, 1);
-// 		}
-// },
+methods: {
+	deleteEntry(index) {
+			this.information.splice(index, 1);
+		}
+},
 props: {
    information: {
       type: Array,

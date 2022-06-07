@@ -1,31 +1,27 @@
 <template>
-  <div class="grid-component">
-      <form v-on:submit="validate()">
-          <div v-for="(question, index) in quiz" :key="question">
-              {{ question.question }}<br />
-              <div v-for="(answer, i) in question.answers" :key="answer[i]">
-                  <input
-                    type="radio"
-                    :name="index"
-                    :value="answer"
-                    :key="i"
-                    v-model="submitted[index]"/>
-                     <label>{{answer}}</label>
-              </div>
-
-          </div>
-          </form>
-              <button @click="check">Check</button>
-                    <audio
-                        id="audio"
-                        src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
-                    </audio>
-              <div class="fail" v-if="reloader">
+	<div class="grid-component">
+        <div v-for="(question, index) in quiz" :key="question">
+            {{ question.question }}
+                <div v-for="(answer, i) in question.answers" :key="answer[i]">
+                    <input
+                        type="radio"
+                        :name="index"
+                        :value="answer"
+                        :key="i"
+                        v-model="submitted[index]"/>
+                     <label>{{ answer }}</label>
+                </div>
+        </div>
+          <button @click="check">Check Answers</button>
+          <div class="fail" v-if="reloader">
                 <button @click="reload">Try Again</button>
-              </div>
-  </div>
+        </div>
+		<audio
+            id="audio"
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+        </audio>
+    </div>
 </template>
-
 
 
 <script>
@@ -33,40 +29,38 @@ export default {
   data() {
     return {
       reloader: false,
-      answer: "",
+      answer: '',
       submitted: [],
-      correct: ["a", "c", "w", "z"],
+      correct: ['a', 'c', 'w','z'],
       quiz: [
         {
-          question: "What is the first letter of the alphabet?",
-          answers: ["a", "b"],
+          question: 'What is the first letter of the alphabet?',
+          answers: ['a', 'b'],
         },
         {
-          question: "What is the third letter of the alphabet?",
-          answers: ["c", "d"],
+          question: 'What is the third letter of the alphabet?',
+          answers: ['c', 'd'],
         },
         {
-          question: "What is the fourth to last letter of the alphabet?",
-          answers: ["w", "x"],
+          question: 'What is the fourth to last letter of the alphabet?',
+          answers: ['w', 'x'],
         },
         {
-          question: "What is the last letter of the alphabet?",
-          answers: ["y", "z"],
+          question: 'What is the last letter of the alphabet?',
+          answers: ['y', 'z'],
         },
       ],
     };
   },
   methods: {
     play() {
-      const audio = document.getElementById("audio");
+      const audio = document.getElementById('audio');
       audio.play();
     },
     check() {
-      let a = Object.values(this.correct).toString();
-      let b = Object.values(this.submitted).toString();
-      console.log(this.submitted, this.correct)
-      // changing this to this.correct === this.submitted returns false ???
-      if (a === b) {
+      let a = this.correct.toString();
+      let b = this.submitted.toString();
+      if(a === b) {
         this.play();
         setTimeout(this.reload, 2500);
       }else{
@@ -79,6 +73,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>
