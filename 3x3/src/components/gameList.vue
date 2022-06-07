@@ -1,28 +1,37 @@
 <template>
     <div class="grid-component">
-        <button
-            class="toggle" 
-            v-on:click="toggle()"
-            >grid/list
+        <button class="toggle"
+            v-on:click="layoutToggle()"
+            >Game: {{layout}}
         </button>
+
+
         <input 
             type="text"
             v-model="search"
-            placeholder="Search title.." 
+            placeholder="Search games.." 
             v-on:keyup="filteredList()"
         />
-        <div id="list-container"> 
-            <li  
-                id="item-list" 
-                v-for="(item, index) in items" 
-                :key="index" >
-                    <div v-if="item.display">
-                        <div v-if="list"> 
-                          {{ item.title }} 
-                        </div>
+        <div id="game-list-container">
+            <ul v-if="layout === 'grid'" class="grid">
+                <li   
+                    v-for="(item, index) in items" 
+                    :key="index" >
+                    <div v-if="item.display" class="content">
+                        <h3>{{ item.title }}</h3> 
                         <img v-bind:src="item.image">
-                    </div>
-            </li>
+                    </div>     
+                </li>
+            </ul > 
+            <ul v-if="layout === 'list'" class="list">
+                <li   
+                    v-for="(item, index) in items" 
+                    :key="index" >
+                    <div v-if="item.display" class="content">
+                        <img v-bind:src="item.image">
+                    </div>   
+                </li>
+            </ul> 
         </div>
     </div>
 </template>
@@ -33,7 +42,7 @@
         data() {
             return {
                 search: '',
-                list: false,
+                layout: 'grid',
                 items: [
                     { 
                         title: 'Tekken 3', 
@@ -85,25 +94,13 @@
         },
         methods:{
             filteredList() {
-                return this.items.filter(item => {
-                    const characters = item.title
-                    if (characters.toLowerCase().includes(this.search)) {
-                        item.display = true;
-                    } else {
-                        item.display = false;
-                    }
+                 this.items.filter(item => {
+                    item.display = (item.title.toLowerCase().includes(this.search))
                 })  
             },
-            toggle(){
-                if (document.getElementById('list-container')){
-                    document.getElementById('list-container').setAttribute('id', 'grid-list');
-                    this.list = true;
-                } else {
-                    document.getElementById('grid-list').setAttribute('id', 'list-container')
-                    this.list = false;
-                }
+            layoutToggle(){
+                this.layout === 'grid' ? this.layout = 'list' : this.layout = 'grid';
             }
-
         }
 }
 </script>
@@ -115,22 +112,20 @@ li {
 }
 img {
     border-radius: 1rem;
+    max-width: 100px;
+}
+li h3 {
     max-width: 150px;
 }
-#list-container {
+
+.content{
+    padding: 1rem;
+
+}
+.grid {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    max-width: 45rem;
 }
 
-#item-list {
-    flex: 1 1 30%;
-    padding-top: 4rem;
-}
-
-#item-grid {
-    display: inline;
-    padding-top: 4rem;
-}
 </style>

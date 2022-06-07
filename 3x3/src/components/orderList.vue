@@ -54,7 +54,6 @@ export default {
         }
     },
     methods: {
-        // cannot figure out how to return value then call subTotal without using setTimeout
         add(row){
             setTimeout(this.subTotal, 1)
             return (this.items)[row].count++

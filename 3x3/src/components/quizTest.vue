@@ -17,6 +17,7 @@
                 <button @click="reload">Try Again</button>
         </div>
 		<audio
+			ref="audio"
             id="audio"
             src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
         </audio>
@@ -54,8 +55,7 @@ export default {
 },
 	methods: {
 		play() {
-			const audio = document.getElementById('audio');
-			audio.play();
+			this.$refs.audio.play()
 		},
 		check() {
 			let a = this.correct.toString();

@@ -39,7 +39,7 @@ export default {
                 this.information.splice(event, 1);
             },
         },
-     data(){
+    data(){
         return{
             information: [
                 {
@@ -52,24 +52,23 @@ export default {
                 firstName:'',
                 lastName:'',
                 age: null
-                }
+            }
             
-          }
-      },
+        }
+    },
 }
 </script>
 
 <style>
 #app {
-    transform: translateY(4rem);
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    justify-content: center;
 }
 .grid-component {
-    flex: 1 1 30%;
+    max-width: 500px;
+    padding: 4rem;
 }
 .toggle {
     position: fixed;
@@ -81,7 +80,7 @@ button:hover {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1300px) {
     body {
         transform: scale(80%);
         transform: translateY(1rem);

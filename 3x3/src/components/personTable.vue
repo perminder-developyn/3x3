@@ -6,7 +6,7 @@
 				<th>Last Name</th>
 				<th>Age</th>
 			</tr>
-            <tr v-for="(row, index) in peopleData" :key="index">
+            <tr v-for="(row, index) in information" :key="index">
 				<td>{{ row["firstName"] }}</td>
 				<td>{{ row["lastName"] }}</td>
 				<td>{{ row["age"] }}</td>
@@ -20,11 +20,6 @@
 
 <script>
 export default {
-	data() {
-        return {
-			peopleData: this.information
-		}
-	},
 	methods: {
 		deleteEntry(index) {
 			this.$emit('delete', index)
@@ -38,11 +33,9 @@ export default {
 	}
 }
 </script>
+
 <style>
 .form-container {
 	display: inline;
-}
-.person-form {
-	padding-top: 3rem;
 }
 </style>

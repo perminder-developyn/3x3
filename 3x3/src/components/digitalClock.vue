@@ -23,6 +23,7 @@ export default {
 
 <style>
 .time {
+    padding-top: 2rem;
     transform: scale(5);
     max-width: 400px;
     color: rgb(0, 171, 171);
