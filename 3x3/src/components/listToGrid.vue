@@ -1,19 +1,30 @@
 <template>
     <div class="grid-component">
-       <input 
-            type="text"
-            v-model="search"
-            placeholder="Search games.." 
-            v-on:keyup="filteredList()"
-        />
+        <button 
+            class="toggle"
+            v-on:click="layoutToggle()"
+        >
+            Game: {{ layout }}
+        </button>
+        
         <div id="game-list-container">
-            <ul>
+            <ul v-if="layout === 'grid'" class="grid">
                 <li   
                     v-for="(item, index) in items" 
                     :key="index"
                 >
-                    <div v-if="item.display" class="content">
-                        <h4>{{item.title}}</h4>
+                    <div class="content">
+                        <img v-bind:src="item.image">
+                    </div>     
+                </li>
+            </ul > 
+            <ul v-if="layout === 'list'" class="list">
+                <li   
+                    v-for="(item, index) in items" 
+                    :key="index"
+                >
+                    <div class="content">
+                        <h3>{{ item.title }}</h3> 
                         <img v-bind:src="item.image">
                     </div>   
                 </li>

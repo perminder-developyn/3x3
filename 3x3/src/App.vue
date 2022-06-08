@@ -6,6 +6,7 @@
   <AddPerson @add="addPersonTable" />
   <OrderList />
   <GameList />
+  <ListToGrid />
   <Mystery8Ball />
 </template>
 
@@ -17,6 +18,7 @@ import PersonTable from './components/personTable.vue'
 import AddPerson from './components/addPerson.vue'
 import OrderList from './components/orderList.vue'
 import GameList from './components/gameList.vue'
+import ListToGrid from './components/listToGrid.vue'
 import Mystery8Ball from './components/eightBall.vue'
 
 export default {
@@ -29,6 +31,7 @@ export default {
             AddPerson, 
             OrderList, 
             GameList, 
+            ListToGrid,
             Mystery8Ball
         },
         methods: {
