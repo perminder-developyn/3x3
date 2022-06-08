@@ -33,6 +33,7 @@ export default {
 			answer: '',
 			submitted: [],
 			correct: ['a', 'c', 'w','z'],
+			analysis: [],
 			quiz: [
 				{
 					question: 'What is the first letter of the alphabet?',
@@ -58,16 +59,19 @@ export default {
 			this.$refs.audio.play();
 		},
 		check() {
-			let a = this.correct
-			let b = this.submitted
-			// loop over array a
-			// check every element at each index in array a check value of a[index]
-			// to the element at the same index in array b
-			if (a.every((element, index) => element === b[index])) {
+			this.analysis = []
+			this.correct.forEach((c) => {
+				this.submitted.forEach((s) => {
+					if (c === s)
+						this.analysis.push(c === s)
+					else {
+						this.reloader = true;
+					}
+				})
+			})
+			if (this.analysis.length === 4) {
 				this.play();
 				setTimeout(this.reload, 2500);
-			} else {
-				this.reloader = true;
 			}
 		},
 		reload() {

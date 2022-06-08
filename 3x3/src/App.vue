@@ -61,14 +61,13 @@ export default {
 
 <style>
 #app {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
 }
 .grid-component {
-    max-width: 500px;
-    padding: 4rem;
+    max-height: 300px;
+    padding: 1rem;
 }
 .toggle {
     position: fixed;
@@ -89,13 +88,13 @@ button:hover {
         display: inline;
     }
     .grid-component {
-        padding: 5rem;
+        padding: 1rem;
     }
     .time {
-        transform: scale(3);
+        font-size: 3rem;
     }
-    .items-list {
-        display: inline;
+    .ball{
+        transform: translateY(50rem);
     }
 }
 </style>

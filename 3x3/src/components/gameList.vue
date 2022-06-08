@@ -127,9 +127,9 @@ li h3 {
 
 }
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 45rem;
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
 }
 
 </style>
