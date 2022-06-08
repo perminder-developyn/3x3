@@ -73,9 +73,7 @@ export default {
     padding: 1rem;
 }
 .toggle {
-    position: fixed;
-    top: 0;
-    right: 0;
+    float: right;
 }
 button:hover {
     border: 2px solid white;  
