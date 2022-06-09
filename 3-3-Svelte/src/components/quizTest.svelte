@@ -18,12 +18,14 @@
       	<button on:click={reload}>Try Again</button>
     {/if}
     <audio  
+		bind:paused={paused}
 		id="audio" 
 		src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" >
     </audio>
 </div>
 
 <script>
+let paused = true;
 let reloader = false;
 let submitted = [];
 let correct = ['a', 'c', 'w', 'z'];
@@ -48,12 +50,11 @@ let quiz = [
     
 function submitter(answer, i) {
     submitted[i] = answer
-    }
+}
 
 function play() {
-    const audio = document.getElementById('audio');
-    audio.play();
-    }
+	paused = !paused
+}
 
 function check() {
 	let analysis = [];

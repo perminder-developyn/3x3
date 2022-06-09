@@ -29,13 +29,15 @@ let information = [
         {
         firstName: 'Perminder',
         lastName: 'Dhillon',
-        age: '31',
+        age: 31,
         },
 ]
 
 
 function addPersonToTable(e) {
-        information = [...information, e.detail.details]
+        console.log(e)
+        information = [...information, e.detail]
+        console.log(information)
 }
 
 </script>
