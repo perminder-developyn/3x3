@@ -58,19 +58,19 @@ function play() {
 
 function check() {
 	let analysis = [];
-	correct.forEach((c) => {
-		submitted.forEach((s) => {
+	correct.forEach(c => {
+		submitted.forEach(s => {
 			if (c === s)
-			analysis.push(c === s);
-			else {
+				analysis.push(c === s);
+			else 
 				reloader = true;
-			}
 		});
-	 });
-	 if(analysis.length === 4){
-		 play();
-		 setTimeout(reload, 2500);
-	 };
+	});
+
+	if (analysis.length === 4) {
+		play();
+		setTimeout(reload, 2500);
+	};
 }
 
 function reload() {
