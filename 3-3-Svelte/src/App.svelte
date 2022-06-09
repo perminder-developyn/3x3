@@ -35,9 +35,7 @@ let information = [
 
 
 function addPersonToTable(e) {
-        console.log(e)
-        information = [...information, e.detail]
-        console.log(information)
+        information = [...information, e.detail];
 }
 
 </script>

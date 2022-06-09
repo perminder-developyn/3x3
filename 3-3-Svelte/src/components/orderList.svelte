@@ -49,19 +49,19 @@ let items = [
 ];
  
 function add(index){
-        ((items)[index].count)++
-        subTotal()
+        ((items)[index].count)++;
+        subTotal();
 }
 function remove(index){
         if (((items)[index].count)>0)
-            ((items)[index].count)--
-        subTotal()
+            ((items)[index].count)--;
+        subTotal();
 }
 
-$: rounded = parseFloat(total).toFixed(2)
+$: rounded = parseFloat(total).toFixed(2);
 
 function subTotal(){
-    total = 0
+    total = 0;
     items.forEach(val => {
         total += Number(val.price*val.count);
     })

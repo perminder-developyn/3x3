@@ -15,8 +15,7 @@
         }
         function addPerson() {
             if(details.firstName && details.lastName && details.age){
-            console.log(details)
-                dispatch("newPerson", { ...details})
+                dispatch("newPerson", { ...details});
         }}
 </script>
 

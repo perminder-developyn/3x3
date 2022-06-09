@@ -26,7 +26,7 @@ function deleteEntry(index) {
 export let information = {
       		type: Array,
       		required: true
-}
+};
 </script>
 
 

@@ -34,17 +34,17 @@ const replies = [
                
            
 function randomReply() {
-    reply = replies[Math.floor(Math.random()*replies.length)]
+    reply = replies[Math.floor(Math.random()*replies.length)];
 }
 function suspense() {
-    reply = ''
-    setInterval(loader, 500)
-    setTimeout(randomReply, 3000)
-    setTimeout(reload, 9000)
+    reply = '';
+    setInterval(loader, 500);
+    setTimeout(randomReply, 3000);
+    setTimeout(reload, 9000);
 }
 function loader() {
-    if(reply.length < 3)
-        reply += '.'
+    if (reply.length < 3)
+        reply += '.';
 }
 function reload() {
     window.location.reload();

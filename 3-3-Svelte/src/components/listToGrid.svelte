@@ -79,7 +79,7 @@ let items = [
 
 
 
-function toggle(){
+function toggle() {
     layout === 'grid' ? layout = 'list' : layout = 'grid';
 }
 </script>
@@ -89,7 +89,7 @@ function toggle(){
 .toggle {
     float: right;
 }
-li{
+li {
     list-style: none;
     padding-top: 2rem;
     margin-top: 2rem;
