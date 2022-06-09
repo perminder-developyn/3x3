@@ -1,37 +1,28 @@
 <div class="grid-component">
-    <div class="person-form">
-        <form action="javascript:" on:submit={addPerson} ref="addTo">
-            <div>
-                <input id="firstName" type="text" placeholder="First Name" bind:value={details.firstName}/>
-            </div>
-            <div>
-                <input id="lastName" type="text" placeholder="Last Name" bind:value={details.lastName}/>
-            </div>
-            <div>
-                <input id="age" type="text" placeholder="Age" bind:value={details.age}/>
-            </div>
-            <input type="submit" value="Add person to table" />
-        </form>
-    </div>
+    <input id="firstName" type="text" placeholder="First Name" bind:value={details.firstName}/>
+    <input id="lastName" type="text" placeholder="Last Name" bind:value={details.lastName}/>
+    <input id="age" type="number" placeholder="Age" bind:value={details.age}/>
+    <button on:click={addPerson}>Add Person To Table</button>
 </div>
 <script>
     import { createEventDispatcher } from "svelte";
         
         const dispatch = createEventDispatcher();
-        export const details = {
-            firstName: "",
-            lastName: "",
-            age: ""
+        const details = {
+            firstName: '',
+            lastName: '',
+            age: null
         }
         function addPerson() {
-            if(details.firstName && details.lastName && details.age)
-            dispatch("newPerson", {
-                details
-            })
-        }
-    </script>
+            if(details.firstName && details.lastName && details.age){
+            console.log(details)
+                dispatch("newPerson", {details})
+        }}
+</script>
+
+
 <style>
-    .grid-component {
-        flex: 1 1 30%;
-    }
+.grid-component {
+    padding: 2rem;
+}
 </style>

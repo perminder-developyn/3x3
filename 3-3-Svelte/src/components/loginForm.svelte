@@ -1,42 +1,41 @@
 <div class="grid-component">
-    <form action="javascript:" on:submit={login}>
-        <p>username and password :  'p'</p>
-		    <input type="text"  id="username"  bind:value={username} placeholder="p"/>
-			<input type="password"  id="password" bind:value={password} placeholder="p"/>
-			<input type="submit"/>
-	</form>
-        {#if correct}
-	        <div class="login">log in successful</div>
-        {:else if fail}
-            <div class="fail">try again</div>
-        {/if}
+	<input type="text"  id="username"  bind:value={username} placeholder="Enter Username"/>
+    <input type="password"  id="password" bind:value={password} placeholder="Enter Password"/>
+    <button on:click={login}>Login</button>
+    {#if correct}
+        <div class="login">log in successful</div>
+    {:else}
+        <div>Enter your username and password (they're both p)</div>
+    {/if}
 </div>
 
 
 <script>
-let username = "";
-let password = "";
+let username = '';
+let password = '';
 let correct = false;
-let fail = false;
+let userData = { password: 'p', username: 'p' };
+
 
 function login() {
-    correct = false;
-        if(username && password === "p") {
-            correct = true;
-        }else{
-            fail = true;
-        }
-    }
+    correct = 
+	    password === userData.password && 
+	    username === userData.username;
+    reset();
+}
+function reset() {
+    username = '';
+    password = '';
+}
 </script>
 
 <style>
-    .login {
-        color: white;
-        background-color: green;
-    }
-    .grid-component {
-        flex: 1 1 30%; 
-        margin: 5px; 
-        padding: 2rem;
-    }
+.login {
+    color: white;
+    background-color: green;
+    max-width: fit-content;
+}
+.grid-component {
+    padding: 2rem;
+}
 </style>
