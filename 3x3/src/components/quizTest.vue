@@ -60,13 +60,12 @@ export default {
 		},
 		check() {
 			this.analysis = []
-			this.correct.forEach((c) => {
-				this.submitted.forEach((s) => {
+			this.correct.forEach(c => {
+				this.submitted.forEach(s => {
 					if (c === s)
 						this.analysis.push(c === s)
-					else {
+					else 
 						this.reloader = true;
-					}
 				})
 			})
 			if (this.analysis.length === 4) {
