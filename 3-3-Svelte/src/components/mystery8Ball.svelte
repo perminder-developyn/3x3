@@ -3,12 +3,12 @@
         class="ball" 
         on:click={suspense}
     >
-        {reply}
+       <h4> {reply} </h4>
     </button>
 </div>
 
 <script>
-let reply = '8';
+let reply = '.8.';
 const replies = [
     'As I see it, yes',
     'Ask again later',
@@ -33,21 +33,24 @@ const replies = [
 ]
                
            
-function randomReply() {
+const randomReply = () => {
     reply = replies[Math.floor(Math.random()*replies.length)];
 }
-function suspense() {
+
+const suspense = () => {
     reply = '';
     setInterval(loader, 500);
     setTimeout(randomReply, 3000);
     setTimeout(reload, 9000);
 }
-function loader() {
+
+const loader = () => {
     if (reply.length < 3)
         reply += '.';
 }
-function reload() {
-    window.location.reload();
+
+const reload = () => {
+    reply =  '.8.';
 }
 </script>
         
@@ -67,13 +70,16 @@ function reload() {
     font-size: 2rem;
     cursor: pointer;
 }
+
 .ball:focus {
     animation: shake 0.5s;
 }
+
 .ball:hover {
     transition: 2s;
     background-color: #000000;
 }
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }

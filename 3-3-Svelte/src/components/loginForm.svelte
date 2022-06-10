@@ -17,13 +17,13 @@ let correct = false;
 let userData = { password: 'p', username: 'p' };
 
 
-function login() {
+const login = () => {
     correct = 
 	    password === userData.password && 
 	    username === userData.username;
     reset();
 }
-function reset() {
+const reset = () => {
     username = '';
     password = '';
 }
@@ -35,6 +35,7 @@ function reset() {
     background-color: green;
     max-width: fit-content;
 }
+
 .grid-component {
     padding: 2rem;
 }

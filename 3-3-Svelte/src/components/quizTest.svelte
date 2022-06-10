@@ -14,8 +14,11 @@
     {/each}
     
     <button on:click={check}>Check</button>
-    {#if reloader}
-      	<button on:click={reload}>Try Again</button>
+    {#if incorrect}
+      	<h4>Incorrect. Please try again </h4>
+    {/if}
+	{#if pass}
+      	<h4>Congratulations! You passed! </h4>
     {/if}
     <audio  
 		bind:paused={paused}
@@ -26,7 +29,8 @@
 
 <script>
 let paused = true;
-let reloader = false;
+let incorrect = false;
+let pass = false;
 let submitted = [];
 let correct = ['a', 'c', 'w', 'z'];
 let quiz = [
@@ -48,33 +52,30 @@ let quiz = [
 		},
 	];
     
-function submitter(answer, i) {
+const submitter = (answer, i) => {
     submitted[i] = answer
 };
 
-function play() {
+const play = () => {
 	paused = !paused
 };
 
-function check() {
+const check = () => {
 	let analysis = [];
 	correct.forEach(c => {
 		submitted.forEach(s => {
 			if (c === s)
 				analysis.push(c === s);
 			else 
-				reloader = true;
+				incorrect = true;
 		});
 	});
 
 	if (analysis.length === 4) {
+		incorrect = false;
+		pass = true;
 		play();
-		setTimeout(reload, 2500);
 	};
-}
-
-function reload() {
-    window.location.reload();
 }
 </script>
   
@@ -82,11 +83,12 @@ function reload() {
 .answers {
 	display: flex;
 }
+
 label {
 	padding-right: 1rem;
 }
+
 .grid-component {
     padding: 2rem;
 }
-
 </style>

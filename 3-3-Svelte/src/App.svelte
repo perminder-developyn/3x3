@@ -2,14 +2,13 @@
     <DigitalClock />
     <LoginForm />
     <QuizTest />
-    <PersonTable information = {information}/>
-    <AddPerson on:newPerson = {addPersonToTable}/>
+    <PersonTable information={information}/>
+    <AddPerson on:newPerson={addPersonToTable}/>
     <OrderList />
     <GameList />
     <ListToGrid />
     <Mystery8Ball />
 </main>
-
 
 <script>
 import DigitalClock from './components/digitalClock.svelte';
@@ -22,31 +21,25 @@ import GameList from './components/gameList.svelte';
 import Mystery8Ball from './components/mystery8Ball.svelte';
 import ListToGrid from './components/listToGrid.svelte';
 
-
-
-
 let information = [
-        {
-        firstName: 'Perminder',
-        lastName: 'Dhillon',
-        age: 31,
-        },
+	{
+		firstName: 'Perminder',
+		lastName: 'Dhillon',
+		age: 31,
+	},
 ]
 
-
-function addPersonToTable(e) {
-        information = [...information, e.detail];
+const addPersonToTable = (e) => {
+    information = [...information, e.detail];
 }
-
 </script>
-
 
 <style>
 main {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-        max-height: 1px;
+    max-height: 1px;
 }
 
 

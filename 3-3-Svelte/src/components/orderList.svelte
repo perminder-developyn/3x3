@@ -48,22 +48,22 @@ let items = [
 
 ];
  
-function add(index){
-        ((items)[index].count)++;
+const add = (index) => {
+        (items)[index].count++;
         subTotal();
 }
-function remove(index){
-        if (((items)[index].count)>0)
-            ((items)[index].count)--;
+const remove = (index) => {
+        if ((items)[index].count > 0)
+            (items)[index].count--;
         subTotal();
 }
 
 $: rounded = parseFloat(total).toFixed(2);
 
-function subTotal(){
+const subTotal = () => {
     total = 0;
     items.forEach(val => {
-        total += Number(val.price*val.count);
+        total += Number(val.price * val.count);
     })
 }
 </script>
@@ -72,6 +72,7 @@ function subTotal(){
 .quantity {
     text-align: center;
 }
+
 th {
     padding: .5rem;
     border-bottom: 3px solid black;
@@ -79,14 +80,17 @@ th {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+
 td {
     padding-top: .5rem;
     border: 1px solid rgba(128, 128, 128, 0.133);
 }
+
 .total {
     background-color: rgba(0, 255, 255, 0.153);
     transform: translateY(1rem) translateX(15rem);
 }
+
 .grid-component{
         padding: 2rem;
 }

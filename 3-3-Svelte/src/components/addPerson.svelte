@@ -5,18 +5,18 @@
     <button on:click={addPerson}>Add Person To Table</button>
 </div>
 <script>
-    import { createEventDispatcher } from "svelte";
-        
-        const dispatch = createEventDispatcher();
-        const details = {
-            firstName: '',
-            lastName: '',
-            age: null
-        }
-        function addPerson() {
-            if(details.firstName && details.lastName && details.age){
-                dispatch("newPerson", { ...details});
-        }}
+import { createEventDispatcher } from "svelte";
+    
+const dispatch = createEventDispatcher();
+const details = {
+    firstName: '',
+    lastName: '',
+    age: null
+}
+const addPerson = () => {
+    if(details.firstName && details.lastName && details.age)
+        dispatch("newPerson", { ...details});
+}
 </script>
 
 

@@ -18,9 +18,9 @@
 
 
 <script>
-function deleteEntry(index) {
-			information.splice(index, 1);
-            information = information;
+const deleteEntry = (index) => {
+	information.splice(index, 1);
+    information = information;
 }
 
 export let information = {
@@ -36,6 +36,7 @@ table, th, td {
 	margin: auto 0;
 	text-align: center;
 }
+
 .grid-component {
     padding: 2rem;
 }
