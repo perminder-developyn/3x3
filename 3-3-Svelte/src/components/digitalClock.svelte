@@ -9,7 +9,7 @@
 let	time = ''
 setInterval(() => {
     time = new Date().toLocaleTimeString();
-    }, 1000);
+}, 1000);
 </script>
 
 <style>
@@ -22,5 +22,4 @@ setInterval(() => {
 .grid-component {
     padding: 2rem;
 }
-
 </style>

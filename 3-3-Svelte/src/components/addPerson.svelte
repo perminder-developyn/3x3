@@ -1,7 +1,7 @@
 <div class="grid-component">
-    <input id="firstName" type="text" placeholder="First Name" bind:value={details.firstName}/>
-    <input id="lastName" type="text" placeholder="Last Name" bind:value={details.lastName}/>
-    <input id="age" type="number" placeholder="Age" bind:value={details.age}/>
+    <input type="text" placeholder="First Name" bind:value={details.firstName}/>
+    <input type="text" placeholder="Last Name" bind:value={details.lastName}/>
+    <input type="number" placeholder="Age" bind:value={details.age}/>
     <button on:click={addPerson}>Add Person To Table</button>
 </div>
 <script>
@@ -12,7 +12,7 @@ const details = {
     firstName: '',
     lastName: '',
     age: null
-}
+};
 const addPerson = () => {
     if(details.firstName && details.lastName && details.age)
         dispatch("newPerson", { ...details});

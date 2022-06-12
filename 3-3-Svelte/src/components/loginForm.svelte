@@ -23,6 +23,7 @@ const login = () => {
 	    username === userData.username;
     reset();
 }
+
 const reset = () => {
     username = '';
     password = '';

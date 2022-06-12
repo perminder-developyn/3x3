@@ -55,7 +55,7 @@ const reload = () => {
 </script>
         
 <style>
-.grid-component{
+.grid-component {
     padding: 2rem;
 }
 

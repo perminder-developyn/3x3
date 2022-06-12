@@ -71,21 +71,21 @@ const filteredList = () => {
     	if (item.title.includes(search)){
        		item.display = true;
        		items = items;
-    	} else {
+		} else {
        		item.display = false;
        		items = items
-      	}
+		}
 	})  
 };
 </script>
 
 
 <style>
-li{
+li {
 	list-style: none;
 }
 
-img{
+img {
 	border-radius: 1rem;
 	max-width: 150px;
 }

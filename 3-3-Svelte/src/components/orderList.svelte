@@ -49,12 +49,12 @@ let items = [
 ];
  
 const add = (index) => {
-        (items)[index].count++;
+        items[index].count++;
         subTotal();
 }
 const remove = (index) => {
-        if ((items)[index].count > 0)
-            (items)[index].count--;
+        if (items[index].count > 0)
+            items[index].count--;
         subTotal();
 }
 
@@ -91,7 +91,7 @@ td {
     transform: translateY(1rem) translateX(15rem);
 }
 
-.grid-component{
+.grid-component {
         padding: 2rem;
 }
 
