@@ -14,7 +14,7 @@ const details = {
     age: null
 };
 const addPerson = () => {
-    if(details.firstName && details.lastName && details.age)
+    if (details.firstName && details.lastName && details.age)
         dispatch("newPerson", { ...details});
 }
 </script>
