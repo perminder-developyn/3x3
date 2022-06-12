@@ -34,7 +34,7 @@ export let information = {
 table, th, td {
 	border: 0.1rem solid black;
 	margin: auto 0;
-text-align: center;
+	text-align: center;
 }
 
 .grid-component {
